@@ -1,0 +1,289 @@
+/* ========================
+   Netflix Clone Styling
+   ======================== */
+
+/* Basic reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+
+/* ========================
+   HEADER / NAV
+   ======================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#logo h1 {
+  color: #e50914;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+#main-nav a {
+  text-decoration: none;
+  color: #e5e5e5;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+#main-nav a:hover {
+  color: #fff;
+}
+
+#actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#search-input {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+#profile-btn {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#profile-btn:hover {
+  background: #b0060f;
+}
+
+/* ========================
+   HERO SECTION
+   ======================== */
+#hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 60px 40px;
+  min-height: 70vh;
+  background: url("https://via.placeholder.com/1200x600?text=Hero+Background") center/cover no-repeat;
+}
+
+#hero h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+#hero-actions button {
+  background: #e50914;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s;
+}
+
+#hero-actions button:hover {
+  background: #b0060f;
+}
+
+#hero-poster img {
+  display: none; /* hide plain poster; using background instead */
+}
+
+/* ========================
+   ROWS / MOVIE CARDS
+   ======================== */
+.row {
+  padding: 20px 40px;
+}
+
+.row h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.row-cards {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  scroll-behavior: smooth;
+}
+
+.row-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  background: #1f1f1f;
+  border-radius: 5px;
+  flex: 0 0 200px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.card-title {
+  padding: 8px 10px 0;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.card-meta {
+  padding: 0 10px 8px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px 10px;
+}
+
+.card-actions button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 7px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card-actions button:hover {
+  background: #e50914;
+}
+
+/* ========================
+   MODAL
+   ======================== */
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+#modal-content {
+  background: #181818;
+  padding: 20px;
+  border-radius: 6px;
+  width: 90%;
+  max-width: 700px;
+  color: #fff;
+  text-align: center;
+}
+
+#modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#trailer-iframe {
+  width: 100%;
+  height: 360px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* ========================
+   FOOTER
+   ======================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+  color: #999;
+  border-top: 1px solid #333;
+}
+
+footer a {
+  color: #999;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* ========================
+   RESPONSIVE
+   ======================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #hero {
+    padding: 40px 20px;
+  }
+
+  .row {
+    padding: 15px 20px;
+  }
+
+  .card {
+    flex: 0 0 150px;
+  }
+}
